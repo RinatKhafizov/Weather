@@ -14,7 +14,7 @@ const store = createStore({
     actions: {
       async setWeather({commit, state}, city='Ташкент'){
         try {
-          let result = await axios.get(`httpsпше ://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${state.apiKey}`);
+          let result = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${state.apiKey}`);
           let cityInfo = result.data[0];
           let {lat, lon, local_names} = cityInfo;
           let result2 = await axios.get(`https://api.openweathermap.org/data/2.8/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${state.apiKey}&lang=ru&units=metric`);
